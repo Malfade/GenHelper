@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продвинутый JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0a192f;
+            color: #ccd6f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #112240;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+        }
+        .demo-section {
+            margin-bottom: 30px;
+        }
+        .demo-title {
+            color: #64ffda;
+            margin-bottom: 15px;
+        }
+        .demo-code {
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-family: monospace;
+        }
+        .demo-result {
+            background: #112240;
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px solid #64ffda;
+        }
+        .demo-controls {
+            margin-top: 15px;
+        }
+        button {
+            background: #64ffda;
+            color: #0a192f;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background: #52d1b2;
+        }
+        .canvas-container {
+            width: 100%;
+            height: 200px;
+            background: #1a1a1a;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+        .websocket-status {
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .websocket-status.connected {
+            background: #4caf50;
+            color: white;
+        }
+        .websocket-status.disconnected {
+            background: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="demo-section">
+            <h2 class="demo-title">1. Canvas Анимация</h2>
+            <div class="demo-code">
+                <pre>const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+    ctx.arc(x, y, 20, 0, Math.PI * 2);
+    ctx.fillStyle = '#64ffda';
+    ctx.fill();
+    
+    x += dx;
+    y += dy;
+    
+    if (x + 20 > canvas.width || x - 20 < 0) dx = -dx;
+    if (y + 20 > canvas.height || y - 20 < 0) dy = -dy;
+    
+    requestAnimationFrame(animate);
+}</pre>
+            </div>
+            <div class="demo-result">
+                <div class="canvas-container">
+                    <canvas id="canvas" width="400" height="200"></canvas>
+                </div>
+                <div class="demo-controls">
+                    <button onclick="startAnimation()">Запустить</button>
+                    <button onclick="stopAnimation()">Остановить</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2 class="demo-title">2. WebSocket</h2>
+            <div class="demo-code">
+                <pre>const ws = new WebSocket('wss://echo.websocket.org');
+
+ws.onopen = () => {
+    status.textContent = 'Подключено';
+    status.classList.add('connected');
+};
+
+ws.onmessage = (event) => {
+    messages.innerHTML += `<div>${event.data}</div>`;
+};</pre>
+            </div>
+            <div class="demo-result">
+                <div id="wsStatus" class="websocket-status disconnected">Отключено</div>
+                <input type="text" id="wsMessage" placeholder="Введите сообщение">
+                <button onclick="sendMessage()">Отправить</button>
+                <div id="wsMessages" style="margin-top: 10px; max-height: 100px; overflow-y: auto;"></div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2 class="demo-title">3. Web Workers</h2>
+            <div class="demo-code">
+                <pre>const worker = new Worker('worker.js');
+
+worker.postMessage({ number: 1000000 });
+
+worker.onmessage = (e) => {
+    result.textContent = `Результат: ${e.data}`;
+};</pre>
+            </div>
+            <div class="demo-result">
+                <button onclick="startWorker()">Запустить вычисление</button>
+                <div id="workerResult"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Canvas Animation
+        let animationFrame;
+        let x = 100;
+        let y = 100;
+        let dx = 2;
+        let dy = 2;
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            ctx.arc(x, y, 20, 0, Math.PI * 2);
+            ctx.fillStyle = '#64ffda';
+            ctx.fill();
+            
+            x += dx;
+            y += dy;
+            
+            if (x + 20 > canvas.width || x - 20 < 0) dx = -dx;
+            if (y + 20 > canvas.height || y - 20 < 0) dy = -dy;
+            
+            animationFrame = requestAnimationFrame(animate);
+        }
+
+        function startAnimation() {
+            if (!animationFrame) animate();
+        }
+
+        function stopAnimation() {
+            if (animationFrame) {
+                cancelAnimationFrame(animationFrame);
+                animationFrame = null;
+            }
+        }
+
+        // WebSocket
+        let ws;
+        const status = document.getElementById('wsStatus');
+        const messages = document.getElementById('wsMessages');
+
+        function connectWebSocket() {
+            ws = new WebSocket('wss://echo.websocket.org');
+
+            ws.onopen = () => {
+                status.textContent = 'Подключено';
+                status.classList.remove('disconnected');
+                status.classList.add('connected');
+            };
+
+            ws.onclose = () => {
+                status.textContent = 'Отключено';
+                status.classList.remove('connected');
+                status.classList.add('disconnected');
+            };
+
+            ws.onmessage = (event) => {
+                messages.innerHTML += `<div>${event.data}</div>`;
+                messages.scrollTop = messages.scrollHeight;
+            };
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('wsMessage');
+            if (ws && ws.readyState === WebSocket.OPEN) {
+                ws.send(input.value);
+                input.value = '';
+            }
+        }
+
+        connectWebSocket();
+
+        // Web Worker
+        function startWorker() {
+            const result = document.getElementById('workerResult');
+            result.textContent = 'Вычисление...';
+
+            const worker = new Worker(URL.createObjectURL(new Blob([`
+                function calculatePrimes(n) {
+                    const primes = [];
+                    for (let i = 2; i <= n; i++) {
+                        let isPrime = true;
+                        for (let j = 2; j <= Math.sqrt(i); j++) {
+                            if (i % j === 0) {
+                                isPrime = false;
+                                break;
+                            }
+                        }
+                        if (isPrime) primes.push(i);
+                    }
+                    return primes;
+                }
+
+                self.onmessage = function(e) {
+                    const primes = calculatePrimes(e.data.number);
+                    self.postMessage(primes.length);
+                };
+            `], { type: 'text/javascript' })));
+
+            worker.postMessage({ number: 1000000 });
+
+            worker.onmessage = (e) => {
+                result.textContent = `Найдено простых чисел: ${e.data}`;
+            };
+        }
+    </script>
+</body>
+</html> 

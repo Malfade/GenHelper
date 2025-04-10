@@ -5,19 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frontend разработка | TechMentor PRO</title>
     <link rel="stylesheet" href="frontend.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-html.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+    <style>
+        /* Стили для интерактивной доски */
+        .interactive-board {
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .board-canvas {
+            width: 100%;
+            height: 400px;
+            background: #112240;
+            border-radius: 4px;
+            cursor: crosshair;
+            touch-action: none;
+        }
+
+        .board-controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .board-tool {
+            background: #64ffda;
+            color: #0a192f;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .board-tool:hover {
+            background: #52d1b2;
+        }
+
+        .board-tool.active {
+            background: #ff5f56;
+        }
+
+        .color-picker {
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .size-slider {
+            width: 100px;
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="container">
             <div class="header-content fade-in">
-                <div class="header-badge fade-in delay-1">
-                    <span>Старт: 15 октября 2023</span>
-                </div>
                 <h1 class="fade-in delay-2">Frontend разработка PRO</h1>
                 <p class="fade-in delay-3">Полный курс современной фронтенд разработки с нуля до профессионального уровня. Освойте самые востребованные технологии и создавайте интерактивные пользовательские интерфейсы.</p>
                 <div class="fade-in delay-4">
-                    <a href="#enroll" class="btn btn-primary">Записаться на курс</a>
-                    <a href="#program" class="btn">Программа обучения</a>
                 </div>
             </div>
         </div>
@@ -31,18 +88,15 @@
                     <div class="stat-label">недель обучения</div>
                 </div>
                 <div class="stat-item fade-in delay-1">
-                    <div class="stat-number">120+</div>
+                    <div class="stat-number">20+</div>
                     <div class="stat-label">практических заданий</div>
                 </div>
                 <div class="stat-item fade-in delay-2">
                     <div class="stat-number">5</div>
                     <div class="stat-label">реальных проектов</div>
                 </div>
-                <div class="stat-item fade-in delay-3">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">поддержка менторов</div>
                 </div>
-            </div>
+
             
             <div class="features">
                 <div class="feature fade-in">
@@ -58,13 +112,6 @@
                     </div>
                     <h3>Карьерная поддержка</h3>
                     <p>Помощь в составлении резюме, подготовке к собеседованиям и поиске работы после окончания курса.</p>
-                </div>
-                <div class="feature fade-in delay-2">
-                    <div class="feature-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3>Сертификат</h3>
-                    <p>Получите сертификат, подтверждающий ваши навыки, который ценится работодателями.</p>
                 </div>
             </div>
         </section>
@@ -84,16 +131,47 @@
                             </div>
                             <h3>Основы веб-разработки</h3>
                             <span class="module-duration">2 недели</span>
+                            <div class="module-meta">
+                                <span class="module-hours">40 часов</span>
+                                <span class="module-level">Начальный</span>
+                            </div>
                         </div>
                         <div class="module-content">
-                            <ul>
-                                <li>Семантическая верстка HTML5</li>
-                                <li>Современный CSS: Flexbox, Grid, анимации</li>
-                                <li>Основы JavaScript: синтаксис, DOM, события</li>
-                                <li>Адаптивный и мобильный дизайн</li>
-                                <li>Доступность (a11y) и валидация</li>
-                                <li>Основы работы с Git</li>
-                            </ul>
+                            <div class="module-description">
+                                <p>Начните свой путь в веб-разработке с фундаментальных основ. Изучите HTML5, CSS3 и базовый JavaScript, создавая адаптивные и доступные веб-страницы.</p>
+                            </div>
+                            <div class="module-skills">
+                                <h4>Приобретаемые навыки:</h4>
+                                <ul class="skills-list">
+                                    <li>Семантическая верстка HTML5</li>
+                                    <li>Современный CSS: Flexbox, Grid, анимации</li>
+                                    <li>Основы JavaScript: синтаксис, DOM, события</li>
+                                    <li>Адаптивный и мобильный дизайн</li>
+                                    <li>Доступность (a11y) и валидация</li>
+                                    <li>Основы работы с Git</li>
+                                </ul>
+                            </div>
+                            <div class="module-projects">
+                                <h4>Практические проекты:</h4>
+                                <ul class="projects-list">
+                                    <li>Создание персонального портфолио</li>
+                                    <li>Адаптивный лендинг для продукта</li>
+                                    <li>Интерактивная форма с валидацией</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="module-interactive">
+                            <h3>Интерактивная доска</h3>
+                            <div class="interactive-board">
+                                <canvas class="board-canvas" id="boardCanvas"></canvas>
+                                <div class="board-controls">
+                                    <button class="board-tool" data-tool="pen">Карандаш</button>
+                                    <button class="board-tool" data-tool="eraser">Ластик</button>
+                                    <button class="board-tool" data-tool="clear">Очистить</button>
+                                    <input type="color" class="color-picker" value="#64ffda">
+                                    <input type="range" class="size-slider" min="1" max="20" value="5">
+                                </div>
+                            </div>
                         </div>
                         <div class="resources">
                             <h4>Ресурсы для изучения:</h4>
@@ -107,6 +185,25 @@
                                 <a href="https://learn.javascript.ru/" target="_blank" class="resource-link">
                                     <i class="fab fa-js"></i> Учебник JS
                                 </a>
+                                <a href="https://htmlacademy.ru/courses" target="_blank" class="resource-link">
+                                    <i class="fas fa-graduation-cap"></i> HTML Academy
+                                </a>
+                                <a href="https://www.freecodecamp.org/learn/responsive-web-design/" target="_blank" class="resource-link">
+                                    <i class="fas fa-laptop-code"></i> FreeCodeCamp
+                                </a>
+                                <a href="https://www.w3schools.com/html/" target="_blank" class="resource-link">
+                                    <i class="fas fa-school"></i> W3Schools
+                                </a>
+                            </div>
+                            <div class="practice-tasks">
+                                <h4>Практические задания:</h4>
+                                <ul class="tasks-list">
+                                    <li>Создайте семантическую структуру для блога</li>
+                                    <li>Разработайте форму обратной связи с валидацией</li>
+                                    <li>Создайте адаптивную карточку товара</li>
+                                    <li>Сделайте интерактивное меню с анимацией</li>
+                                    <li>Сверстайте лендинг для мобильного приложения</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -141,6 +238,25 @@
                                 <a href="https://github.com/getify/You-Dont-Know-JS" target="_blank" class="resource-link">
                                     <i class="fab fa-github"></i> YDKJS
                                 </a>
+                                <a href="https://www.patterns.dev/" target="_blank" class="resource-link">
+                                    <i class="fas fa-puzzle-piece"></i> Patterns.dev
+                                </a>
+                                <a href="https://www.javascripttutorial.net/" target="_blank" class="resource-link">
+                                    <i class="fas fa-graduation-cap"></i> JS Tutorial
+                                </a>
+                                <a href="https://www.youtube.com/playlist?list=PLM6XATa8CAG4F9nAIYNS5oNyBTCN9AFln" target="_blank" class="resource-link">
+                                    <i class="fab fa-youtube"></i> JS Видеокурс
+                                </a>
+                            </div>
+                            <div class="practice-tasks">
+                                <h4>Практические задания:</h4>
+                                <ul class="tasks-list">
+                                    <li>Создайте приложение для управления задачами (Todo List)</li>
+                                    <li>Разработайте калькулятор с расширенными функциями</li>
+                                    <li>Сделайте приложение для работы с API погоды</li>
+                                    <li>Создайте игру "Змейка" с использованием Canvas</li>
+                                    <li>Разработайте приложение для заметок с локальным хранилищем</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -176,6 +292,25 @@
                                 <a href="https://nextjs.org/docs" target="_blank" class="resource-link">
                                     <i class="fas fa-server"></i> Next.js Docs
                                 </a>
+                                <a href="https://vuejs.org/guide/introduction.html" target="_blank" class="resource-link">
+                                    <i class="fab fa-vuejs"></i> Vue.js Docs
+                                </a>
+                                <a href="https://www.robinwieruch.de/react-hooks" target="_blank" class="resource-link">
+                                    <i class="fas fa-book-reader"></i> React Hooks
+                                </a>
+                                <a href="https://www.youtube.com/playlist?list=PLM6XATa8CAG4F9nAIYNS5oNyBTCN9AFln" target="_blank" class="resource-link">
+                                    <i class="fab fa-youtube"></i> React Видеокурс
+                                </a>
+                            </div>
+                            <div class="practice-tasks">
+                                <h4>Практические задания:</h4>
+                                <ul class="tasks-list">
+                                    <li>Создайте SPA для управления задачами с использованием React и Redux</li>
+                                    <li>Разработайте интернет-магазин с корзиной и оформлением заказа</li>
+                                    <li>Сделайте приложение для просмотра фильмов с использованием API</li>
+                                    <li>Создайте социальную сеть с профилями пользователей</li>
+                                    <li>Разработайте приложение для управления проектами (Trello-клон)</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -211,6 +346,25 @@
                                 <a href="https://sass-lang.com/documentation" target="_blank" class="resource-link">
                                     <i class="fab fa-sass"></i> Sass Docs
                                 </a>
+                                <a href="https://vitejs.dev/guide/" target="_blank" class="resource-link">
+                                    <i class="fas fa-bolt"></i> Vite Docs
+                                </a>
+                                <a href="https://www.netlify.com/docs/" target="_blank" class="resource-link">
+                                    <i class="fas fa-cloud"></i> Netlify Docs
+                                </a>
+                                <a href="https://vercel.com/docs" target="_blank" class="resource-link">
+                                    <i class="fas fa-rocket"></i> Vercel Docs
+                                </a>
+                            </div>
+                            <div class="practice-tasks">
+                                <h4>Практические задания:</h4>
+                                <ul class="tasks-list">
+                                    <li>Настройте сборку проекта с использованием Webpack и Babel</li>
+                                    <li>Перепишите существующий проект на TypeScript</li>
+                                    <li>Создайте стили с использованием Sass и PostCSS</li>
+                                    <li>Настройте CI/CD для автоматического деплоя</li>
+                                    <li>Оптимизируйте производительность веб-приложения</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -246,6 +400,25 @@
                                 <a href="https://github.com/topics/fullstack-app" target="_blank" class="resource-link">
                                     <i class="fas fa-code"></i> Fullstack Apps
                                 </a>
+                                <a href="https://github.com/topics/ecommerce" target="_blank" class="resource-link">
+                                    <i class="fas fa-shopping-cart"></i> E-commerce
+                                </a>
+                                <a href="https://github.com/topics/social-network" target="_blank" class="resource-link">
+                                    <i class="fas fa-users"></i> Социальные сети
+                                </a>
+                                <a href="https://github.com/topics/dashboard" target="_blank" class="resource-link">
+                                    <i class="fas fa-chart-line"></i> Дашборды
+                                </a>
+                            </div>
+                            <div class="practice-tasks">
+                                <h4>Практические задания:</h4>
+                                <ul class="tasks-list">
+                                    <li>Разработайте полноценное SPA-приложение с авторизацией</li>
+                                    <li>Создайте интернет-магазин с корзиной и оформлением заказа</li>
+                                    <li>Сделайте социальную сеть с профилями и лентой постов</li>
+                                    <li>Разработайте дашборд для аналитики с графиками</li>
+                                    <li>Создайте приложение для управления проектами</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -286,7 +459,214 @@
             </div>
         </section>
         
-        <section class="code-section">
+    
+
+    <section id="learning-path" class="learning-path-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Карта обучения</h2>
+                <p>Интерактивный путь от новичка до профессионала</p>
+            </div>
+            <div class="learning-path-container">
+                <div class="path-timeline">
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-content">
+                            <h3>Неделя 1-2</h3>
+                            <p>Основы веб-разработки</p>
+                        </div>
+                        <div class="timeline-progress">
+                            <div class="progress-bar" style="width: 20%"></div>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in delay-1">
+                        <div class="timeline-content">
+                            <h3>Неделя 3-5</h3>
+                            <p>Продвинутый JavaScript</p>
+                        </div>
+                        <div class="timeline-progress">
+                            <div class="progress-bar" style="width: 40%"></div>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in delay-2">
+                        <div class="timeline-content">
+                            <h3>Неделя 6-9</h3>
+                            <p>Фреймворки и библиотеки</p>
+                        </div>
+                        <div class="timeline-progress">
+                            <div class="progress-bar" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in delay-3">
+                        <div class="timeline-content">
+                            <h3>Неделя 10-11</h3>
+                            <p>Инструменты и инфраструктура</p>
+                        </div>
+                        <div class="timeline-progress">
+                            <div class="progress-bar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in delay-4">
+                        <div class="timeline-content">
+                            <h3>Неделя 12-14</h3>
+                            <p>Реальный проект</p>
+                        </div>
+                        <div class="timeline-progress">
+                            <div class="progress-bar" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="demos" class="demos-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Демонстрационные страницы</h2>
+                <p>Изучите примеры кода и интерактивные демонстрации</p>
+            </div>
+            
+            <div class="demo-grid">
+                <div class="demo-card fade-in">
+                    <div class="demo-preview">
+                        <iframe src="demo-html.html" frameborder="0"></iframe>
+                    </div>
+                    <div class="demo-info">
+                        <h3>HTML Основы</h3>
+                        <p>Базовые элементы и структура HTML5</p>
+                        <div class="demo-actions">
+                            <button class="btn btn-primary view-demo" data-demo="demo-html.html">Открыть</button>
+                            <button class="btn view-code" data-code="demo-html.html">Показать код</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-card fade-in delay-1">
+                    <div class="demo-preview">
+                        <iframe src="demo-css.html" frameborder="0"></iframe>
+                    </div>
+                    <div class="demo-info">
+                        <h3>CSS Стили</h3>
+                        <p>Современные техники стилизации</p>
+                        <div class="demo-actions">
+                            <button class="btn btn-primary view-demo" data-demo="demo-css.html">Открыть</button>
+                            <button class="btn view-code" data-code="demo-css.html">Показать код</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-card fade-in delay-2">
+                    <div class="demo-preview">
+                        <iframe src="demo-js.html" frameborder="0"></iframe>
+                    </div>
+                    <div class="demo-info">
+                        <h3>JavaScript</h3>
+                        <p>Интерактивность и динамика</p>
+                        <div class="demo-actions">
+                            <button class="btn btn-primary view-demo" data-demo="demo-js.html">Открыть</button>
+                            <button class="btn view-code" data-code="demo-js.html">Показать код</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="interactive-practice" class="interactive-practice-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Интерактивные практики</h2>
+                <p>Закрепите свои знания с помощью интерактивных упражнений</p>
+            </div>
+            
+            <div class="practice-grid">
+                <div class="practice-card fade-in">
+                    <div class="practice-header">
+                        <div class="practice-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>HTML Практика</h3>
+                        <span class="practice-level">Начальный</span>
+                    </div>
+                    <div class="practice-content">
+                        <p>Практикуйтесь в написании семантического HTML-кода с мгновенной проверкой.</p>
+                        <div class="practice-editor">
+                            <textarea class="practice-code" placeholder="Введите HTML код здесь..."></textarea>
+                            <div class="practice-preview"></div>
+                        </div>
+                        <div class="practice-controls">
+                            <button class="btn btn-primary run-practice">Запустить</button>
+                            <button class="btn check-practice">Проверить</button>
+                            <button class="btn reset-practice">Сбросить</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="practice-card fade-in delay-1">
+                    <div class="practice-header">
+                        <div class="practice-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3>CSS Практика</h3>
+                        <span class="practice-level">Средний</span>
+                    </div>
+                    <div class="practice-content">
+                        <p>Создавайте стили и видите результат в реальном времени.</p>
+                        <div class="practice-editor">
+                            <textarea class="practice-code" placeholder="Введите CSS код здесь..."></textarea>
+                            <div class="practice-preview">
+                                <div class="preview-element"></div>
+                            </div>
+                        </div>
+                        <div class="practice-controls">
+                            <button class="btn btn-primary run-practice">Запустить</button>
+                            <button class="btn check-practice">Проверить</button>
+                            <button class="btn reset-practice">Сбросить</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="practice-card fade-in delay-2">
+                    <div class="practice-header">
+                        <div class="practice-icon">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <h3>JavaScript Практика</h3>
+                        <span class="practice-level">Продвинутый</span>
+                    </div>
+                    <div class="practice-content">
+                        <p>Решайте задачи на JavaScript и проверяйте результаты.</p>
+                        <div class="practice-editor">
+                            <textarea class="practice-code" placeholder="Введите JavaScript код здесь..."></textarea>
+                            <div class="practice-console">
+                                <div class="console-output"></div>
+                                <div class="console-input">
+                                    <span class="console-prompt">></span>
+                                    <input type="text" class="console-command" placeholder="Введите команду...">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="practice-controls">
+                            <button class="btn btn-primary run-practice">Запустить</button>
+                            <button class="btn check-practice">Проверить</button>
+                            <button class="btn reset-practice">Сбросить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="codeViewer" class="code-viewer">
+        <div class="code-viewer-header">
+            <h3>Просмотр кода</h3>
+            <button class="close-viewer">&times;</button>
+        </div>
+        <div class="code-viewer-content">
+            <pre><code class="language-html"></code></pre>
+        </div>
+    </div>
+    <section class="code-section">
             <div class="container">
                 <div class="section-title fade-in">
                     <h2>Практика в реальном времени</h2>
@@ -381,22 +761,6 @@
             </div>
         </div>
     </section>
-    
-    <section id="enroll" class="cta-section">
-        <div class="cta-content fade-in">
-            <h2>Готовы стать фронтенд-разработчиком?</h2>
-            <p>Начните свой путь в IT с нами. Первый модуль доступен бесплатно для всех зарегистрированных пользователей.</p>
-            <div class="cta-buttons">
-                <a href="#" class="btn btn-primary">
-                    <i class="fas fa-user-plus"></i> Записаться на курс
-                </a>
-                <a href="#" class="btn">
-                    <i class="fas fa-info-circle"></i> Узнать подробнее
-                </a>
-            </div>
-        </div>
-    </section>
-    
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -436,5 +800,98 @@
         </div>
     </footer>
     <script src="frontend.js"></script> 
+    <script>
+        // Код для интерактивной доски
+        const canvas = document.getElementById('boardCanvas');
+        const ctx = canvas.getContext('2d');
+        let isDrawing = false;
+        let currentTool = 'pen';
+        let currentColor = '#64ffda';
+        let currentSize = 5;
+        let lastX = 0;
+        let lastY = 0;
+
+        // Установка размеров canvas
+        function resizeCanvas() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+
+        // Обработчики событий canvas
+        function startDrawing(e) {
+            isDrawing = true;
+            [lastX, lastY] = getCoordinates(e);
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+            
+            const [currentX, currentY] = getCoordinates(e);
+            
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(currentX, currentY);
+            ctx.strokeStyle = currentTool === 'eraser' ? '#112240' : currentColor;
+            ctx.lineWidth = currentSize;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.stroke();
+            
+            [lastX, lastY] = [currentX, currentY];
+        }
+
+        function stopDrawing() {
+            isDrawing = false;
+        }
+
+        // Получение координат с учетом поддержки тач-устройств
+        function getCoordinates(e) {
+            if (e.type.includes('touch')) {
+                const touch = e.touches[0];
+                const rect = canvas.getBoundingClientRect();
+                return [
+                    touch.clientX - rect.left,
+                    touch.clientY - rect.top
+                ];
+            }
+            return [e.offsetX, e.offsetY];
+        }
+
+        // Обработчики инструментов
+        document.querySelectorAll('.board-tool').forEach(tool => {
+            tool.addEventListener('click', () => {
+                document.querySelectorAll('.board-tool').forEach(t => t.classList.remove('active'));
+                tool.classList.add('active');
+                currentTool = tool.dataset.tool;
+                
+                if (currentTool === 'clear') {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                }
+            });
+        });
+
+        // Обработчики цвета и размера
+        document.querySelector('.color-picker').addEventListener('input', (e) => {
+            currentColor = e.target.value;
+        });
+
+        document.querySelector('.size-slider').addEventListener('input', (e) => {
+            currentSize = e.target.value;
+        });
+
+        // Добавление обработчиков событий
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseout', stopDrawing);
+
+        canvas.addEventListener('touchstart', startDrawing);
+        canvas.addEventListener('touchmove', draw);
+        canvas.addEventListener('touchend', stopDrawing);
+
+        // Инициализация
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+    </script>
 </body>
 </html>
