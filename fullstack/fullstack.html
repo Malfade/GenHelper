@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullstack разработка | TechMentor PRO</title>
+    <link rel="stylesheet" href="fullstack.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-java.min.js"></script>
+    <style>
+        /* Стили для интерактивной консоли */
+        .interactive-console {
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .console-output {
+            width: 100%;
+            height: 300px;
+            background: #112240;
+            border-radius: 4px;
+            padding: 15px;
+            font-family: 'Fira Code', monospace;
+            color: #64ffda;
+            overflow-y: auto;
+        }
+
+        .console-input {
+            width: 100%;
+            background: #112240;
+            border: none;
+            padding: 10px;
+            color: #64ffda;
+            font-family: 'Fira Code', monospace;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+
+        .console-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #64ffda;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content fade-in">
+                <h1 class="fade-in delay-2">Fullstack разработка PRO</h1>
+                <p class="fade-in delay-3">Комплексное обучение fullstack разработке. Освойте создание полноценных веб-приложений от frontend до backend.</p>
+                <div class="fade-in delay-4">
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <section class="container">
+            <div class="stats">
+                <div class="stat-item fade-in">
+                    <div class="stat-number">20</div>
+                    <div class="stat-label">недель обучения</div>
+                </div>
+                <div class="stat-item fade-in delay-1">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">практических заданий</div>
+                </div>
+                <div class="stat-item fade-in delay-2">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">реальных проектов</div>
+                </div>
+            </div>
+
+            <div class="course-overview fade-in delay-3">
+                <h2>Обзор курса</h2>
+                <div class="overview-grid">
+                    <div class="overview-item">
+                        <h3>Длительность</h3>
+                        <p>20 недель интенсивного обучения</p>
+                    </div>
+                    <div class="overview-item">
+                        <h3>Формат</h3>
+                        <p>Онлайн-занятия + практика</p>
+                    </div>
+                    <div class="overview-item">
+                        <h3>Уровень</h3>
+                        <p>С нуля до профессионального</p>
+                    </div>
+                    <div class="overview-item">
+                        <h3>Сертификат</h3>
+                        <p>По окончании курса</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modules fade-in delay-4">
+                <h2>Программа курса</h2>
+                <div class="module-grid">
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-number">01</span>
+                            <h3>Основы веб-разработки</h3>
+                        </div>
+                        <p class="module-duration">3 недели</p>
+                        <ul class="module-topics">
+                            <li>HTML, CSS, JavaScript</li>
+                            <li>Git и GitHub</li>
+                            <li>Основы Node.js</li>
+                            <li>HTTP и REST API</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-number">02</span>
+                            <h3>Frontend разработка</h3>
+                        </div>
+                        <p class="module-duration">4 недели</p>
+                        <ul class="module-topics">
+                            <li>React.js и Redux</li>
+                            <li>TypeScript</li>
+                            <li>CSS-in-JS и Styled Components</li>
+                            <li>Тестирование (Jest, React Testing)</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-number">03</span>
+                            <h3>Backend разработка</h3>
+                        </div>
+                        <p class="module-duration">4 недели</p>
+                        <ul class="module-topics">
+                            <li>Express.js и NestJS</li>
+                            <li>Базы данных (SQL и NoSQL)</li>
+                            <li>Аутентификация и авторизация</li>
+                            <li>WebSocket и real-time</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-number">04</span>
+                            <h3>DevOps и деплой</h3>
+                        </div>
+                        <p class="module-duration">3 недели</p>
+                        <ul class="module-topics">
+                            <li>Docker и контейнеризация</li>
+                            <li>CI/CD (GitHub Actions)</li>
+                            <li>Мониторинг и логирование</li>
+                            <li>Cloud platforms (AWS/GCP)</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-number">05</span>
+                            <h3>Финальный проект</h3>
+                        </div>
+                        <p class="module-duration">6 недель</p>
+                        <ul class="module-topics">
+                            <li>Разработка полноценного приложения</li>
+                            <li>Микросервисная архитектура</li>
+                            <li>Масштабирование и оптимизация</li>
+                            <li>Защита проекта</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects fade-in delay-5">
+                <h2>Проекты курса</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>E-commerce Platform</h3>
+                        <p>Полноценный интернет-магазин с админ-панелью</p>
+                        <ul class="project-tech">
+                            <li>React + TypeScript</li>
+                            <li>Node.js + Express</li>
+                            <li>MongoDB + Redis</li>
+                            <li>Docker + AWS</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Social Network</h3>
+                        <p>Социальная сеть с real-time обновлениями</p>
+                        <ul class="project-tech">
+                            <li>React + Redux</li>
+                            <li>NestJS</li>
+                            <li>PostgreSQL</li>
+                            <li>WebSocket</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Task Management System</h3>
+                        <p>Система управления задачами с командной работой</p>
+                        <ul class="project-tech">
+                            <li>Vue.js</li>
+                            <li>Python + FastAPI</li>
+                            <li>MySQL</li>
+                            <li>Kubernetes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="requirements fade-in delay-6">
+                <h2>Требования к участникам</h2>
+                <div class="requirements-grid">
+                    <div class="requirement-card">
+                        <i class="fas fa-code"></i>
+                        <h3>Базовые знания</h3>
+                        <ul>
+                            <li>Основы программирования</li>
+                            <li>Базовый английский</li>
+                            <li>Работа с Git</li>
+                        </ul>
+                    </div>
+
+                    <div class="requirement-card">
+                        <i class="fas fa-laptop"></i>
+                        <h3>Технические требования</h3>
+                        <ul>
+                            <li>Компьютер с ОС Windows/Mac/Linux</li>
+                            <li>Стабильный интернет</li>
+                            <li>8GB RAM минимум</li>
+                        </ul>
+                    </div>
+
+                    <div class="requirement-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Временные затраты</h3>
+                        <ul>
+                            <li>20-25 часов в неделю</li>
+                            <li>4 занятия по 2 часа</li>
+                            <li>Практические задания</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="enrollment fade-in delay-7">
+                <h2>Запись на курс</h2>
+                <form class="enrollment-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">Опыт в программировании</label>
+                            <select id="experience" name="experience" required>
+                                <option value="">Выберите опыт</option>
+                                <option value="none">Нет опыта</option>
+                                <option value="beginner">Начинающий</option>
+                                <option value="intermediate">Средний</option>
+                                <option value="advanced">Продвинутый</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Дополнительная информация</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="agreement" name="agreement" required>
+                        <label for="agreement">Я согласен на обработку персональных данных</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить заявку</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 TechMentor PRO. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="fullstack.js"></script>
+</body>
+</html> 

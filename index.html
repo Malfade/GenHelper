@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+ <html lang="ru">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>TechMentor - Профессиональное обучение разработчиков</title>
+     <meta name="description" content="Ускоренный курс для быстрого входа в IT. Освойте необходимые технологии и лучшие практики под руководством опытных менторов.">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="index.css"
+ </head>
+ <body>
+     <header id="header">
+         <div class="container">
+             <nav>
+                 <a href="#" class="logo">
+                     <i class="fas fa-laptop-code"></i>
+                     <span>TechMentor</span>
+                 </a>
+                 <div class="nav-links">
+                     <a href="#programs"><span>01.</span> Программы</a>
+                     <a href="#mentors"><span>02.</span> Менторы</a>
+                     <a href="#resources"><span>03.</span> Ресурсы</a>
+                     <a href="#testimonials"><span>04.</span> Отзывы</a>
+                     <a href="#faq"><span>05.</span> FAQ</a>
+                     <a href="editor.html"><span>06.</span> Редактор кода</a>
+                 </div>
+                 <div class="nav-controls">
+                     <button id="themeToggle" class="theme-toggle" aria-label="Переключить тему">
+                         <i class="fas fa-moon"></i>
+                     </button>
+                     <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Открыть меню">
+                         <i class="fas fa-bars"></i>
+                     </button>
+                 </div>
+             </nav>
+         </div>
+     </header>
+ 
+     <div class="mobile-menu" id="mobileMenu">
+         <button class="mobile-menu-close" id="mobileMenuClose">
+             <i class="fas fa-times"></i>
+         </button>
+         <div class="nav-links">
+             <a href="#programs"><span>01.</span> Программы</a>
+             <a href="#mentors"><span>02.</span> Менторы</a>
+             <a href="#resources"><span>03.</span> Ресурсы</a>
+             <a href="#testimonials"><span>04.</span> Отзывы</a>
+             <a href="#faq"><span>05.</span> FAQ</a>
+             <a href="editor.html"><span>06.</span> Редактор кода</a>
+         </div>
+     </div>
+ 
+     <section class="hero">
+         <div class="container">
+             <div class="hero-content">
+                 <p class="animate" style="color: var(--accent); margin-bottom: 1rem; font-family: 'SF Mono', monospace; font-size: 0.9rem;">Приветствуем в TechMentor</p>
+                 <h1 class="animate delay-1">Онбординг для новых разработчиков</h1>
+                 <h2 class="animate delay-2">Ускоренный курс для быстрого входа в проекты компании</h2>
+                 <p class="animate delay-3">Освойте необходимые технологии и лучшие практики под руководством опытных менторов. Наш курс поможет вам быстро адаптироваться и начать вносить вклад в реальные проекты.</p>
+                 <div class="hero-btns animate delay-4">
+                     <a href="#programs" class="btn btn-primary">Начать обучение</a>
+                     <a href="#mentors" class="btn">Наши менторы</a>
+                 </div>
+             </div>
+         </div>
+         <a href="mailto:onboarding@techmentor.example.com" class="hero-email animate delay-5">onboarding@techmentor.example.com</a>
+     </section>
+ 
+     <section id="programs" class="section">
+         <div class="container">
+             <h2 class="section-title animate"><span style="color: var(--accent); font-family: 'SF Mono', monospace; font-size: 1rem; margin-right: 0.5rem;">01.</span> Программы обучения</h2>
+             <p class="section-subtitle animate delay-1">Выберите направление, которое соответствует вашим целям и интересам. Все программы включают практические задания и реальные проекты.</p>
+ 
+             <div class="tracks">
+                 <div class="track animate delay-1">
+                     <h3><i class="fas fa-code"></i> Frontend разработка</h3>
+                     <p>Полный курс современной фронтенд разработки с нуля до продвинутого уровня. Научитесь создавать интерактивные пользовательские интерфейсы с использованием последних технологий.</p>
+                     <span class="track-duration">14 недель</span>
+                     <div class="track-buttons">
+                         <a href="frontend/frontend.html" class="btn btn-primary">Подробнее о курсе</a>
+                     </div>
+ 
+                     <div class="modules">
+                         <div class="module">
+                             <h4><i class="fas fa-check"></i> Основы веба (2 недели)</h4>
+                             <p>HTML5, CSS3, основы JavaScript, работа с DevTools, адаптивный дизайн</p>
+                         </div>
+                         <div class="module">
+                             <h4><i class="fas fa-check"></i> Продвинутый JavaScript (3 недели)</h4>
+                             <p>ES6+, асинхронное программирование, работа с DOM, паттерны проектирования</p>
+                         </div>
+                         <div class="module">
+                             <h4><i class="fas fa-check"></i> Фреймворки (4 недели)</h4>
+                             <p>React/Vue, состояние приложения, маршрутизация, работа с API</p>
+                         </div>
+                         <div class="module">
+                             <h4><i class="fas fa-check"></i> Инструменты и оптимизация (2 недели)</h4>
+                             <p>Webpack, тестирование (Jest, Cypress), производительность, PWA</p>
+                         </div>
+                         <div class="module">
+                             <h4><i class="fas fa-check"></i> Реальный проект (3 недели)</h4>
+                             <p>Разработка фичи для основного продукта компании в команде</p>
+                         </div>
+                     </div>
+                 </div>
+ 
+                 <div class="track animate delay-2">
+                     <h3><i class="fas fa-server"></i> Backend разработка</h3>
+                     <p>Комплексное обучение серверной разработке и работе с базами данных. Освойте создание надежных и масштабируемых серверных приложений.</p>
+                     <span class="track-duration">14 недель</span>
+                     <div class="track-buttons">
+                         <a href="backend/backend.html" class="btn btn-primary">Подробнее о курсе</a>
+                     </div>
+ 
+                     <div class="modules">
+                         <div class="module">
+                             <h4><i class="fas fa-check"></i> Основы backend (2 недели)</h4>
+                             <p>HTTP, REST API, основы Node.js/Python/Java (на выбор), архитектура приложений</p>
+                         </div>
+                         <div class="module">
+                             <h4><i class="fas fa-check"></i> Работа с базами данных (3 недели)</h4>
+                             <p>SQL/NoSQL, ORM, миграции, оптимизация запросов, транзакции</p>
+                         </div>
+                         <div class="module">
+                             <h4><i class="fas fa-check"></i> Разработка API (3 недели)</h4>
+                             <p>Архитектура, аутентификация (JWT, OAuth), документация (Swagger), GraphQL</p>
+                         </div>
+                         <div class="module">
+                             <h4><i class="fas fa-check"></i> Микросервисы и DevOps (3 недели)</h4>
+                             <p>Docker, Kubernetes, мониторинг (Prometheus, Grafana), логирование (ELK)</p>
+                         </div>
+                         <div class="module">
+                             <h4><i class="fas fa-check"></i> Реальный проект (3 недели)</h4>
+                             <p>Разработка микросервиса для основного продукта компании</p>
+                         </div>
+                     </div>
+                 </div>
+ 
+                 <div class="track animate delay-3">
+                     <h3><i class="fas fa-layer-group"></i> Fullstack интенсив</h3>
+                     <p>Для тех, кто хочет понимать весь стек технологий. Научитесь создавать полноценные приложения от интерфейса до сервера.</p>
+                     <span class="track-duration">14 недель</span>
+                     <div class="track-buttons">
+                         <a href="fullstack/fullstack.html" class="btn btn-primary">Подробнее о курсе</a>
+                     </div>
+ 
+                     <div class="modules">
+                         <div class="module">
+                             <h4><i class="fas fa-check"></i> Основы (3 недели)</h4>
+                             <p>HTML/CSS/JS + основы backend, работа с Git, основы командной работы</p>
+                         </div>
+                         <div class="module">
+                             <h4><i class="fas fa-check"></i> Фреймворки (4 недели)</h4>
+                             <p>React + Express/Nest.js (или аналоги), Redux/MobX, SSR (Next.js/Nuxt.js)</p>
+                         </div>
+                         <div class="module">
+                             <h4><i class="fas fa-check"></i> Интеграция (3 недели)</h4>
+                             <p>Связь frontend и backend, работа с API, WebSockets, авторизация</p>
+                         </div>
+                         <div class="module">
+                             <h4><i class="fas fa-check"></i> Реальный проект (4 недели)</h4>
+                             <p>Полноценное приложение от идеи до деплоя на production-сервер</p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+ 
+     <section id="mentors" class="section">
+         <div class="container">
+             <h2 class="section-title animate"><span style="color: var(--accent); font-family: 'SF Mono', monospace; font-size: 1rem; margin-right: 0.5rem;">02.</span> Наши менторы</h2>
+             <p class="section-subtitle animate delay-1">Опытные разработчики, которые помогут вам освоить технологии и лучшие практики разработки.</p>
+ 
+             <div class="mentors">
+                 <div class="mentor-card animate delay-1">
+                     <img src="Images/Malfade.jpg" alt="Malfade" class="mentor-img">
+                     <h3>Malfade</h3>
+                     <p>Fullstack Developer</p>
+                     <p>Куратор основной группы</p>
+                     <div class="mentor-social">
+                         <a href="#"><i class="fab fa-github"></i></a>
+                         <a href="#"><i class="fab fa-linkedin"></i></a>
+                         <a href="#"><i class="fab fa-twitter"></i></a>
+                     </div>
+                 </div>
+ 
+                 <div class="mentor-card animate delay-2">
+                     <img src="Images/TTD.jpg" alt="TTD" class="mentor-img">
+                     <h3>TDDan</h3>
+                     <p>Fullstack Developer</p>
+                     <p>Основатель проекта</p>
+                     <p style="font-size: 0.9rem; color: var(--light-dark);">алкаш мирового уровня</p>
+                     <div class="mentor-social">
+                         <a href="#"><i class="fab fa-github"></i></a>
+                         <a href="#"><i class="fab fa-linkedin"></i></a>
+                         <a href="#"><i class="fab fa-twitter"></i></a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+ 
+     <section id="resources" class="section" style="background-color: var(--secondary);">
+         <div class="container">
+             <h2 class="section-title animate"><span style="color: var(--accent); font-family: 'SF Mono', monospace; font-size: 1rem; margin-right: 0.5rem;">03.</span> Дополнительные ресурсы</h2>
+             <p class="section-subtitle animate delay-1">Все необходимое для успешного обучения и работы в нашей компании.</p>
+ 
+             <div class="resources">
+                 <div class="resource-card animate delay-1">
+                     <h3><i class="fas fa-book"></i> Корпоративные стандарты</h3>
+                     <ul>
+                         <li>Руководство по стилю кода и лучшим практикам</li>
+                         <li>Git workflow компании (GitFlow, PR процесс)</li>
+                         <li>Процесс code review и критерии качества</li>
+                         <li>Шаблоны проектов и быстрый старт</li>
+                         <li>Библиотека UI компонентов и дизайн-система</li>
+                         <li>Паттерны проектирования и архитектурные решения</li>
+                     </ul>
+                 </div>
+                 <div class="resource-card animate delay-2">
+                     <h3><i class="fas fa-link"></i> Полезные ссылки</h3>
+                     <ul>
+                         <li>Внутренняя документация и гайды</li>
+                         <li>Обучающие видео и вебинары</li>
+                         <li>Чек-листы для новых сотрудников</li>
+                         <li>FAQ по common issues и решениям</li>
+                         <li>Форум для вопросов и обсуждений</li>
+                         <li>База знаний компании и best practices</li>
+                     </ul>
+                 </div>
+                 <div class="resource-card animate delay-3">
+                     <h3><i class="fas fa-tools"></i> Инструменты</h3>
+                     <ul>
+                         <li>Настройка рабочего окружения (dotfiles)</li>
+                         <li>Доступ к тестовым серверам и staging</li>
+                         <li>Мониторинг (New Relic, Sentry) и логи (Kibana)</li>
+                         <li>Система тикетов (Jira, Linear) и трекинг</li>
+                         <li>CI/CD пайплайны (GitHub Actions, Jenkins)</li>
+                         <li>Внутренние утилиты и CLI инструменты</li>
+                     </ul>
+                 </div>
+             </div>
+         </div>
+     </section>
+ 
+     <section id="faq" class="section" style="background-color: var(--secondary);">
+         <div class="container">
+             <h2 class="section-title animate"><span style="color: var(--accent); font-family: 'SF Mono', monospace; font-size: 1rem; margin-right: 0.5rem;">05.</span> Часто задаваемые вопросы</h2>
+             <p class="section-subtitle animate delay-1">Ответы на самые популярные вопросы о нашей программе</p>
+ 
+             <div class="faq">
+                 <div class="faq-item animate delay-1">
+                     <div class="faq-question">
+                         <span>Какие требования к участникам программы?</span>
+                         <i class="fas fa-chevron-down"></i>
+                     </div>
+                     <div class="faq-answer">
+                         <p>Для участия в программе необходимо базовое понимание программирования (переменные, условия, циклы, функции) и английского языка на уровне чтения документации. Мы принимаем как начинающих разработчиков, так и тех, кто хочет углубить свои знания в конкретном направлении.</p>
+                     </div>
+                 </div>
+ 
+                 <div class="faq-item animate delay-2">
+                     <div class="faq-question">
+                         <span>Какой график обучения?</span>
+                         <i class="fas fa-chevron-down"></i>
+                     </div>
+                     <div class="faq-answer">
+                         <p>Программа рассчитана на 14 недель интенсивного обучения. Занятия проходят 3 раза в неделю по вечерам (19:00-21:00), а также предусмотрены задания для самостоятельной работы. В среднем студенты тратят 15-20 часов в неделю на обучение.</p>
+                     </div>
+                 </div>
+ 
+                 <div class="faq-item animate delay-3">
+                     <div class="faq-question">
+                         <span>Есть ли трудоустройство после обучения?</span>
+                         <i class="fas fa-chevron-down"></i>
+                     </div>
+                     <div class="faq-answer">
+                         <p>Лучшие выпускники получают предложения о работе в нашей компании или у наших партнеров. Однако мы не гарантируем трудоустройство - все зависит от ваших результатов и уровня подготовки. Мы помогаем с составлением резюме и подготовкой к собеседованиям.</p>
+                     </div>
+                 </div>
+ 
+                 <div class="faq-item animate delay-4">
+                     <div class="faq-question">
+                         <span>Какие технологии мы используем в обучении?</span>
+                         <i class="fas fa-chevron-down"></i>
+                     </div>
+                     <div class="faq-answer">
+                         <p>В frontend: HTML5, CSS3, JavaScript (ES6+), React, TypeScript, Webpack. В backend: Node.js/Express или Python/Django (на выбор), REST API, GraphQL, PostgreSQL/MongoDB, Docker. Также изучаем Git, тестирование (Jest, Cypress), CI/CD.</p>
+                     </div>
+                 </div>
+ 
+                 <div class="faq-item animate delay-5">
+                     <div class="faq-question">
+                         <span>Как проходит процесс обучения?</span>
+                         <i class="fas fa-chevron-down"></i>
+                     </div>
+                     <div class="faq-answer">
+                         <p>Обучение строится по принципу "learning by doing". Каждая тема включает теорию, практические задания и code review от менторов. В конце каждого модуля - мини-проект. Финальный проект - разработка реальной фичи для продукта компании в команде.</p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+ 
+     <section id="projects" class="section">
+         <div class="container">
+             <h2 class="section-title animate"><span style="color: var(--accent); font-family: 'SF Mono', monospace; font-size: 1rem; margin-right: 0.5rem;">06.</span> Примеры проектов</h2>
+             <p class="section-subtitle animate delay-1">Реализуйте реальные проекты, чтобы закрепить свои знания и пополнить портфолио.</p>
+             
+             <div class="projects">
+                 <div class="project-card animate delay-1">
+                     <h3><i class="fas fa-tasks"></i> Task Manager</h3>
+                     <p>Одностраничное приложение для управления задачами с использованием React, Redux и TypeScript.</p>
+                 </div>
+                 <div class="project-card animate delay-2">
+                     <h3><i class="fas fa-database"></i> User Management API</h3>
+                     <p>REST API для управления пользователями с аутентификацией и авторизацией на Node.js и MongoDB.</p>
+                 </div>
+                 <div class="project-card animate delay-3">
+                     <h3><i class="fas fa-calendar-alt"></i> Event Booking App</h3>
+                     <p>Полноценное приложение для бронирования мероприятий с интеграцией frontend и backend.</p>
+                 </div>
+                 <div class="project-card animate delay-4">
+                     <h3><i class="fas fa-cogs"></i> CI/CD Pipeline</h3>
+                     <p>Настройка автоматического деплоя приложения с использованием Docker, Kubernetes и GitHub Actions.</p>
+                 </div>
+             </div>
+         </div>
+     </section>
+     
+     <section class="cta-section">
+         <div class="container">
+             <div class="cta-content animate">
+                 <h2>Готовы начать обучение?</h2>
+                 <p>Присоединяйтесь к сотням студентов, которые уже изменили свою карьеру с помощью наших программ. Выберите подходящий курс и начните свой путь в IT уже сегодня.</p>
+ 
+                 <div class="cta-buttons">
+                     <a href="#programs" class="btn btn-primary">Выбрать программу</a>
+                 </div>
+             </div>
+         </div>
+     </section>
+ 
+     <section id="pricing" class="section">
+         <div class="container">
+             <h2 class="section-title animate"><span style="color: var(--accent); font-family: 'SF Mono', monospace; font-size: 1rem; margin-right: 0.5rem;">07.</span> Тарифные планы</h2>
+             <p class="section-subtitle animate delay-1">Выберите подходящий план обучения для достижения ваших целей</p>
+
+             <div class="pricing-cards">
+                 <div class="pricing-card animate delay-1">
+                     <div class="pricing-header">
+                         <h3>Базовый</h3>
+                         <div class="price">
+                             <span class="amount">29,990</span>
+                             <span class="currency">₽</span>
+                             <span class="period">/месяц</span>
+                         </div>
+                     </div>
+                     <ul class="features">
+                         <li><i class="fas fa-check"></i> Доступ к базовым курсам</li>
+                         <li><i class="fas fa-check"></i> Групповые консультации</li>
+                         <li><i class="fas fa-check"></i> Доступ к материалам</li>
+                         <li><i class="fas fa-check"></i> Базовая поддержка</li>
+                     </ul>
+                     <a href="#contact" class="btn btn-primary">Выбрать план</a>
+                 </div>
+
+                 <div class="pricing-card featured animate delay-2">
+                     <div class="pricing-header">
+                         <h3>Профессиональный</h3>
+                         <div class="price">
+                             <span class="amount">49,990</span>
+                             <span class="currency">₽</span>
+                             <span class="period">/месяц</span>
+                         </div>
+                     </div>
+                     <ul class="features">
+                         <li><i class="fas fa-check"></i> Все курсы и материалы</li>
+                         <li><i class="fas fa-check"></i> Индивидуальные консультации</li>
+                         <li><i class="fas fa-check"></i> Практические проекты</li>
+                         <li><i class="fas fa-check"></i> Приоритетная поддержка</li>
+                         <li><i class="fas fa-check"></i> Помощь в трудоустройстве</li>
+                     </ul>
+                     <a href="#contact" class="btn btn-primary">Выбрать план</a>
+                 </div>
+
+                 <div class="pricing-card animate delay-3">
+                     <div class="pricing-header">
+                         <h3>Корпоративный</h3>
+                         <div class="price">
+                             <span class="amount">99,990</span>
+                             <span class="currency">₽</span>
+                             <span class="period">/месяц</span>
+                         </div>
+                     </div>
+                     <ul class="features">
+                         <li><i class="fas fa-check"></i> Все курсы и материалы</li>
+                         <li><i class="fas fa-check"></i> Персональный ментор</li>
+                         <li><i class="fas fa-check"></i> Реальные проекты</li>
+                         <li><i class="fas fa-check"></i> 24/7 поддержка</li>
+                         <li><i class="fas fa-check"></i> Гарантированное трудоустройство</li>
+                         <li><i class="fas fa-check"></i> Корпоративные скидки</li>
+                     </ul>
+                     <a href="#contact" class="btn btn-primary">Выбрать план</a>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+     <section id="benefits" class="section">
+         <div class="container">
+             <h2 class="section-title animate"><span style="color: var(--accent); font-family: 'SF Mono', monospace; font-size: 1rem; margin-right: 0.5rem;">08.</span> Наши преимущества</h2>
+             <p class="section-subtitle animate delay-1">Почему стоит выбрать именно нас</p>
+
+             <div class="benefits-grid">
+                 <div class="benefit-card animate delay-1">
+                     <i class="fas fa-graduation-cap"></i>
+                     <h3>Опытные менторы</h3>
+                     <p>Наши преподаватели - практикующие разработчики с опытом от 5 лет</p>
+                 </div>
+                 <div class="benefit-card animate delay-2">
+                     <i class="fas fa-laptop-code"></i>
+                     <h3>Практический подход</h3>
+                     <p>80% времени уделяется практическим заданиям и реальным проектам</p>
+                 </div>
+                 <div class="benefit-card animate delay-3">
+                     <i class="fas fa-users"></i>
+                     <h3>Трудоустройство</h3>
+                     <p>Помощь в составлении резюме и подготовке к собеседованиям</p>
+                 </div>
+                 <div class="benefit-card animate delay-4">
+                     <i class="fas fa-certificate"></i>
+                     <h3>Сертификат</h3>
+                     <p>По окончании курса вы получаете сертификат, признанный работодателями</p>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+     <section id="contact" class="section">
+         <div class="container">
+             <h2 class="section-title animate"><span style="color: var(--accent); font-family: 'SF Mono', monospace; font-size: 1rem; margin-right: 0.5rem;">09.</span> Свяжитесь с нами</h2>
+             <p class="section-subtitle animate delay-1">Оставьте заявку, и мы свяжемся с вами в ближайшее время</p>
+
+             <div class="contact-form animate delay-2">
+                 <form id="contactForm">
+                     <div class="form-row">
+                         <div class="form-group">
+                             <label for="name">Ваше имя</label>
+                             <input type="text" id="name" name="name" required placeholder="Иван Иванов">
+                         </div>
+                         <div class="form-group">
+                             <label for="email">Email</label>
+                             <input type="email" id="email" name="email" required placeholder="ivan@example.com">
+                         </div>
+                     </div>
+                     <div class="form-row">
+                         <div class="form-group">
+                             <label for="phone">Телефон</label>
+                             <input type="tel" id="phone" name="phone" required placeholder="+7 (999) 123-45-67">
+                         </div>
+                         <div class="form-group">
+                             <label for="city">Город</label>
+                             <input type="text" id="city" name="city" required placeholder="Москва">
+                         </div>
+                     </div>
+                     <div class="form-row">
+                         <div class="form-group">
+                             <label for="program">Выберите программу</label>
+                             <select id="program" name="program" required>
+                                 <option value="">Выберите программу</option>
+                                 <option value="frontend">Frontend разработка</option>
+                                 <option value="backend">Backend разработка</option>
+                                 <option value="fullstack">Fullstack интенсив</option>
+                             </select>
+                         </div>
+                         <div class="form-group">
+                             <label for="experience">Опыт в программировании</label>
+                             <select id="experience" name="experience" required>
+                                 <option value="">Выберите опыт</option>
+                                 <option value="none">Нет опыта</option>
+                                 <option value="beginner">Начинающий (до 1 года)</option>
+                                 <option value="intermediate">Средний (1-3 года)</option>
+                                 <option value="advanced">Продвинутый (3+ года)</option>
+                             </select>
+                         </div>
+                     </div>
+                     <div class="form-group">
+                         <label for="goals">Ваши цели обучения</label>
+                         <select id="goals" name="goals" required>
+                             <option value="">Выберите цель</option>
+                             <option value="career">Смена карьеры</option>
+                             <option value="skills">Повышение квалификации</option>
+                             <option value="startup">Создание стартапа</option>
+                             <option value="hobby">Хобби/саморазвитие</option>
+                         </select>
+                     </div>
+                     <div class="form-group">
+                         <label for="message">Дополнительная информация</label>
+                         <textarea id="message" name="message" placeholder="Расскажите о себе и своих ожиданиях от обучения"></textarea>
+                     </div>
+                     <div class="form-group checkbox-group">
+                         <input type="checkbox" id="agreement" name="agreement" required>
+                         <label for="agreement">Я согласен на обработку персональных данных и принимаю условия <a href="#">политики конфиденциальности</a></label>
+                     </div>
+                     <div class="form-group checkbox-group">
+                         <input type="checkbox" id="newsletter" name="newsletter">
+                         <label for="newsletter">Хочу получать новости и специальные предложения</label>
+                     </div>
+                     <button type="submit" class="btn btn-primary">Отправить заявку</button>
+                 </form>
+             </div>
+         </div>
+     </section>
+ 
+     <footer>
+         <div class="container">
+             <div class="footer-content">
+                 <div class="footer-column">
+                     <h3>TechMentor</h3>
+                     <p>Корпоративная программа обучения разработчиков с нуля до профессионального уровня.</p>
+                     <div class="footer-social">
+                         <a href="#"><i class="fab fa-github"></i></a>
+                         <a href="#"><i class="fab fa-telegram"></i></a>
+                         <a href="#"><i class="fab fa-linkedin"></i></a>
+                         <a href="#"><i class="fab fa-youtube"></i></a>
+                     </div>
+                 </div>
+                 <div class="footer-column">
+                     <h3>Программы</h3>
+                     <ul class="footer-links">
+                         <li><a href="#">Frontend разработка</a></li>
+                         <li><a href="#">Backend разработка</a></li>
+                         <li><a href="#">Fullstack интенсив</a></li>
+                         <li><a href="#">DevOps обучение</a></li>
+                         <li><a href="#">Индивидуальные курсы</a></li>
+                     </ul>
+                 </div>
+                 <div class="footer-column">
+                     <h3>Ресурсы</h3>
+                     <ul class="footer-links">
+                         <li><a href="#">Документация</a></li>
+                         <li><a href="#">Блог</a></li>
+                         <li><a href="#">FAQ</a></li>
+                         <li><a href="#">Форум</a></li>
+                         <li><a href="#">Карьера</a></li>
+                     </ul>
+                 </div>
+                 <div class="footer-column">
+                     <h3>Контакты</h3>
+                     <ul class="footer-links">
+                         <li><a href="mailto:onboarding@techmentor.example.com">onboarding@example.com</a></li>
+                         <li><a href="tel:+78001234567">номер</a></li>
+                     </ul>
+                 </div>
+             </div>
+             <div class="footer-bottom">
+                 <p>© 2025 TechMentor - Все права защищены</p>
+             </div>
+         </div>
+     </footer>
+ 
+     <a href="#" class="back-to-top" id="backToTop">
+         <i class="fas fa-arrow-up"></i>
+     </a>
+ 
+     <div id="programModal" class="modal">
+         <div class="modal-content">
+             <span class="close-btn" id="closeModal">&times;</span>
+             <h2>Выберите программу</h2>
+             <ul class="program-list">
+                 <li><a href="/frontend/frontend.html" class="program-link">Frontend разработка</a></li>
+                 <li><a href="backend.html" class="program-link">Backend разработка</a></li>
+                 <li><a href="fullstack.html" class="program-link">Fullstack интенсив</a></li>
+             </ul>
+         </div>
+     </div>
+ 
+     <script>
+         // Мобильное меню
+         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+         const mobileMenuClose = document.getElementById('mobileMenuClose');
+         const mobileMenu = document.getElementById('mobileMenu');
+ 
+         mobileMenuBtn.addEventListener('click', () => {
+             mobileMenu.classList.add('active');
+             document.body.style.overflow = 'hidden';
+         });
+ 
+         mobileMenuClose.addEventListener('click', () => {
+             mobileMenu.classList.remove('active');
+             document.body.style.overflow = '';
+         });
+ 
+         // Плавная прокрутка
+         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+             anchor.addEventListener('click', function(e) {
+                 e.preventDefault();
+ 
+                 const targetId = this.getAttribute('href');
+                 if (targetId === '#') return;
+ 
+                 const targetElement = document.querySelector(targetId);
+ 
+                 if (targetElement) {
+                     // Закрываем мобильное меню, если оно открыто
+                     mobileMenu.classList.remove('active');
+                     document.body.style.overflow = '';
+ 
+                     // Плавная прокрутка
+                     window.scrollTo({
+                         top: targetElement.offsetTop - 80,
+                         behavior: 'smooth'
+                     });
+                 }
+             });
+         });
+ 
+         // Кнопка "Наверх"
+         const backToTop = document.getElementById('backToTop');
+ 
+         window.addEventListener('scroll', () => {
+             if (window.pageYOffset > 300) {
+                 backToTop.classList.add('visible');
+             } else {
+                 backToTop.classList.remove('visible');
+             }
+         });
+ 
+         // Фиксированный хедер при скролле
+         const header = document.getElementById('header');
+ 
+         window.addEventListener('scroll', () => {
+             if (window.pageYOffset > 50) {
+                 header.classList.add('scrolled');
+             } else {
+                 header.classList.remove('scrolled');
+             }
+         });
+ 
+         // Анимации при скролле
+         const animateElements = document.querySelectorAll('.animate');
+ 
+         function checkAnimation() {
+             const windowHeight = window.innerHeight;
+             const triggerPoint = windowHeight * 0.85;
+ 
+             animateElements.forEach(element => {
+                 const elementTop = element.getBoundingClientRect().top;
+ 
+                 if (elementTop < triggerPoint) {
+                     element.style.opacity = 1;
+                 }
+             });
+         }
+ 
+         window.addEventListener('scroll', checkAnimation);
+         window.addEventListener('load', checkAnimation);
+ 
+         // FAQ аккордеон
+         const faqItems = document.querySelectorAll('.faq-item');
+ 
+         faqItems.forEach(item => {
+             const question = item.querySelector('.faq-question');
+ 
+             question.addEventListener('click', () => {
+                 // Закрываем все открытые вопросы
+                 faqItems.forEach(otherItem => {
+                     if (otherItem !== item && otherItem.classList.contains('active')) {
+                         otherItem.classList.remove('active');
+                     }
+                 });
+ 
+                 // Открываем/закрываем текущий вопрос
+                 item.classList.toggle('active');
+             });
+         });
+ 
+         // Отправка формы (пример)
+         const contactForm = document.getElementById('contactForm');
+ 
+         if (contactForm) {
+             contactForm.addEventListener('submit', async (e) => {
+                 e.preventDefault();
+ 
+                 const formData = new FormData(contactForm);
+                 const submitBtn = contactForm.querySelector('button[type="submit"]');
+                 const originalBtnText = submitBtn.innerHTML;
+ 
+                 try {
+                     // Показываем индикатор загрузки
+                     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
+                     submitBtn.disabled = true;
+ 
+                     // Имитация отправки на сервер
+                     await new Promise(resolve => setTimeout(resolve, 1500));
+ 
+                     // Успешная отправка
+                     alert('Ваша заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.');
+                     contactForm.reset();
+ 
+                 } catch (error) {
+                     console.error('Ошибка при отправке формы:', error);
+                     alert('Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже.');
+                 } finally {
+                     // Восстанавливаем кнопку
+                     submitBtn.innerHTML = originalBtnText;
+                     submitBtn.disabled = false;
+                 }
+             });
+         }
+ 
+         // Modal functionality
+         const programModal = document.getElementById('programModal');
+         const openModalBtn = document.querySelector('.btn-primary[href="#programs"]');
+         const closeModalBtn = document.getElementById('closeModal');
+ 
+         openModalBtn.addEventListener('click', (e) => {
+             e.preventDefault();
+             programModal.style.display = 'block';
+         });
+ 
+         closeModalBtn.addEventListener('click', () => {
+             programModal.style.display = 'none';
+         });
+ 
+         window.addEventListener('click', (e) => {
+             if (e.target === programModal) {
+                 programModal.style.display = 'none';
+             }
+         });
+     </script>
+ </body>

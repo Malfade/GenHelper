@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend разработка | TechMentor PRO</title>
+    <link rel="stylesheet" href="backend.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-java.min.js"></script>
+    <style>
+        /* Стили для интерактивной консоли */
+        .interactive-console {
+            background: var(--bg-darker);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            position: relative;
+        }
+
+        .console-output {
+            width: 100%;
+            height: 300px;
+            background: #112240;
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            font-family: var(--font-mono);
+            color: var(--primary);
+            overflow-y: auto;
+        }
+
+        .console-input {
+            width: 100%;
+            background: #112240;
+            border: 1px solid var(--highlight);
+            padding: var(--spacing-sm);
+            color: var(--primary);
+            font-family: var(--font-mono);
+            margin-top: var(--spacing-sm);
+            border-radius: var(--border-radius);
+        }
+
+        .console-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="#overview">Обзор</a></li>
+                    <li><a href="#modules">Модули</a></li>
+                    <li><a href="#projects">Проекты</a></li>
+                    <li><a href="#requirements">Требования</a></li>
+                    <li><a href="#enrollment">Запись</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="header-content fade-in">
+                <h1 class="fade-in delay-2">Backend разработка PRO</h1>
+                <p class="fade-in delay-3">Комплексное обучение серверной разработке и работе с базами данных. Освойте создание надежных и масштабируемых серверных приложений.</p>
+                <div class="fade-in delay-4">
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <section class="container">
+            <div class="stats">
+                <div class="stat-item fade-in">
+                    <div class="stat-number">14</div>
+                    <div class="stat-label">недель обучения</div>
+                </div>
+                <div class="stat-item fade-in delay-1">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">практических заданий</div>
+                </div>
+                <div class="stat-item fade-in delay-2">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">реальных проектов</div>
+                </div>
+            </div>
+
+            <div class="course-overview fade-in delay-3">
+                <h2>Обзор курса</h2>
+                <div class="overview-grid">
+                    <div class="overview-item">
+                        <h3>Длительность</h3>
+                        <p>14 недель интенсивного обучения</p>
+                    </div>
+                    <div class="overview-item">
+                        <h3>Формат</h3>
+                        <p>Онлайн-занятия + практика</p>
+                    </div>
+                    <div class="overview-item">
+                        <h3>Уровень</h3>
+                        <p>С нуля до профессионального</p>
+                    </div>
+                    <div class="overview-item">
+                        <h3>Сертификат</h3>
+                        <p>По окончании курса</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="interactive-learning-module fade-in delay-3">
+                <h2>Интерактивное обучение</h2>
+                <div class="interactive-features">
+                    <div class="feature-card">
+                        <div class="feature-icon">💻</div>
+                        <h3>Практическая среда</h3>
+                        <p>Пишите и тестируйте серверный код прямо в браузере</p>
+                        <button class="start-practice">Начать практику</button>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Отслеживание прогресса</h3>
+                        <p>Следите за своим прогрессом и получайте рекомендации</p>
+                        <button class="view-progress">Посмотреть прогресс</button>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤝</div>
+                        <h3>Сообщество</h3>
+                        <p>Общайтесь с другими студентами и получайте помощь</p>
+                        <button class="join-community">Присоединиться</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="code-editor-container fade-in delay-4">
+                <h3>Практический редактор кода</h3>
+                <div class="editor-toolbar">
+                    <select id="language-select">
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                    </select>
+                    <button class="run-code">Запустить код</button>
+                    <button class="reset-code">Сбросить</button>
+                </div>
+                <div class="editor-wrapper">
+                    <div class="line-numbers"></div>
+                    <textarea id="code-editor" class="code-editor"></textarea>
+                </div>
+                <div class="editor-output">
+                    <h4>Результат выполнения:</h4>
+                    <div class="output-content"></div>
+                </div>
+            </div>
+
+            <div class="learning-path fade-in delay-5">
+                <h2>Путь обучения</h2>
+                <div class="path-container">
+                    <div class="path-item">
+                        <div class="path-icon">1</div>
+                        <div class="path-content">
+                            <h3>Основы</h3>
+                            <p>Изучение базовых концепций программирования</p>
+                            <ul>
+                                <li>Переменные и типы данных</li>
+                                <li>Условные операторы</li>
+                                <li>Циклы и функции</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="path-connector"></div>
+                    <div class="path-item">
+                        <div class="path-icon">2</div>
+                        <div class="path-content">
+                            <h3>Серверная разработка</h3>
+                            <p>Создание серверных приложений</p>
+                            <ul>
+                                <li>HTTP и REST API</li>
+                                <li>Работа с базами данных</li>
+                                <li>Аутентификация</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="path-connector"></div>
+                    <div class="path-item">
+                        <div class="path-icon">3</div>
+                        <div class="path-content">
+                            <h3>Продвинутые темы</h3>
+                            <p>Углубленное изучение backend</p>
+                            <ul>
+                                <li>Микросервисы</li>
+                                <li>Кэширование</li>
+                                <li>Оптимизация</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resources-section fade-in delay-6">
+                <h2>Дополнительные ресурсы</h2>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-icon">📚</div>
+                        <h3>Документация</h3>
+                        <ul>
+                            <li><a href="#">Node.js Documentation</a></li>
+                            <li><a href="#">Python Documentation</a></li>
+                            <li><a href="#">Java Documentation</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-icon">🎥</div>
+                        <h3>Видеоуроки</h3>
+                        <ul>
+                            <li><a href="#">Основы backend</a></li>
+                            <li><a href="#">Работа с базами данных</a></li>
+                            <li><a href="#">API разработка</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-icon">💡</div>
+                        <h3>Полезные статьи</h3>
+                        <ul>
+                            <li><a href="#">Лучшие практики</a></li>
+                            <li><a href="#">Оптимизация кода</a></li>
+                            <li><a href="#">Безопасность</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="interactive-console fade-in delay-4">
+                <h3>Практическая среда</h3>
+                <div class="console-output" id="consoleOutput"></div>
+                <div class="console-input-container">
+                    <input type="text" class="console-input" id="consoleInput" placeholder="Введите команду...">
+                    <button class="console-submit">Выполнить</button>
+                </div>
+            </div>
+
+            <div class="program-modules">
+                <div class="module fade-in">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Основы программирования</h3>
+                        <span class="module-duration">2 недели</span>
+                    </div>
+                    <div class="module-content">
+                        <div class="module-description">
+                            <p>Начните с основ программирования и алгоритмов. Изучите базовые концепции, которые необходимы для серверной разработки.</p>
+                        </div>
+                        <div class="module-topics">
+                            <h4>Темы:</h4>
+                            <ul>
+                                <li>Основы алгоритмов и структур данных</li>
+                                <li>Работа с переменными и типами данных</li>
+                                <li>Условные операторы и циклы</li>
+                                <li>Функции и модульность кода</li>
+                                <li>Обработка ошибок и исключений</li>
+                                <li>Основы объектно-ориентированного программирования</li>
+                            </ul>
+                        </div>
+                        <div class="module-practice">
+                            <h4>Практические задания:</h4>
+                            <ul>
+                                <li>Создание калькулятора с обработкой ошибок</li>
+                                <li>Реализация простой базы данных в памяти</li>
+                                <li>Разработка системы управления задачами</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module fade-in delay-1">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Основы серверной разработки</h3>
+                        <span class="module-duration">3 недели</span>
+                    </div>
+                    <div class="module-content">
+                        <div class="module-description">
+                            <p>Изучите основы создания серверных приложений и работу с HTTP протоколом.</p>
+                        </div>
+                        <div class="module-topics">
+                            <h4>Темы:</h4>
+                            <ul>
+                                <li>HTTP протокол и REST API</li>
+                                <li>Создание простого веб-сервера</li>
+                                <li>Обработка HTTP запросов и ответов</li>
+                                <li>Работа с маршрутизацией (routing)</li>
+                                <li>Параметры запросов и тела запросов</li>
+                                <li>Основы аутентификации и авторизации</li>
+                            </ul>
+                        </div>
+                        <div class="module-practice">
+                            <h4>Практические задания:</h4>
+                            <ul>
+                                <li>Создание REST API для блога</li>
+                                <li>Реализация системы аутентификации</li>
+                                <li>Разработка API для управления пользователями</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module fade-in delay-2">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Работа с базами данных</h3>
+                        <span class="module-duration">3 недели</span>
+                    </div>
+                    <div class="module-content">
+                        <div class="module-description">
+                            <p>Освойте работу с различными типами баз данных и их интеграцию в серверные приложения.</p>
+                        </div>
+                        <div class="module-topics">
+                            <h4>Темы:</h4>
+                            <ul>
+                                <li>Реляционные базы данных (PostgreSQL, MySQL)</li>
+                                <li>NoSQL базы данных (MongoDB, Redis)</li>
+                                <li>ORM и миграции</li>
+                                <li>Оптимизация запросов</li>
+                                <li>Транзакции и ACID</li>
+                                <li>Репликация и шардирование</li>
+                            </ul>
+                        </div>
+                        <div class="module-practice">
+                            <h4>Практические задания:</h4>
+                            <ul>
+                                <li>Создание системы управления контентом</li>
+                                <li>Разработка системы аналитики</li>
+                                <li>Реализация кэширования данных</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module fade-in delay-3">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Безопасность и производительность</h3>
+                        <span class="module-duration">2 недели</span>
+                    </div>
+                    <div class="module-content">
+                        <div class="module-description">
+                            <p>Изучите методы обеспечения безопасности и оптимизации производительности серверных приложений.</p>
+                        </div>
+                        <div class="module-topics">
+                            <h4>Темы:</h4>
+                            <ul>
+                                <li>Основы безопасности веб-приложений</li>
+                                <li>Защита от SQL-инъекций и XSS</li>
+                                <li>JWT и OAuth 2.0</li>
+                                <li>Оптимизация запросов к БД</li>
+                                <li>Кэширование и балансировка нагрузки</li>
+                                <li>Мониторинг и логирование</li>
+                            </ul>
+                        </div>
+                        <div class="module-practice">
+                            <h4>Практические задания:</h4>
+                            <ul>
+                                <li>Реализация системы аудита безопасности</li>
+                                <li>Оптимизация производительности API</li>
+                                <li>Настройка системы мониторинга</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module fade-in delay-4">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Деплой и DevOps</h3>
+                        <span class="module-duration">2 недели</span>
+                    </div>
+                    <div class="module-content">
+                        <div class="module-description">
+                            <p>Научитесь развертывать и поддерживать серверные приложения в production-среде.</p>
+                        </div>
+                        <div class="module-topics">
+                            <h4>Темы:</h4>
+                            <ul>
+                                <li>Docker и контейнеризация</li>
+                                <li>CI/CD пайплайны</li>
+                                <li>Облачные платформы (AWS, GCP, Azure)</li>
+                                <li>Настройка серверов и Nginx</li>
+                                <li>Масштабирование приложений</li>
+                                <li>Бэкапы и восстановление</li>
+                            </ul>
+                        </div>
+                        <div class="module-practice">
+                            <h4>Практические задания:</h4>
+                            <ul>
+                                <li>Настройка CI/CD пайплайна</li>
+                                <li>Деплой приложения в облако</li>
+                                <li>Настройка системы мониторинга</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module fade-in delay-5">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h3>Финальный проект</h3>
+                        <span class="module-duration">2 недели</span>
+                    </div>
+                    <div class="module-content">
+                        <div class="module-description">
+                            <p>Примените все полученные знания в реальном проекте под руководством ментора.</p>
+                        </div>
+                        <div class="module-topics">
+                            <h4>Требования к проекту:</h4>
+                            <ul>
+                                <li>Разработка полноценного REST API</li>
+                                <li>Интеграция с базой данных</li>
+                                <li>Реализация системы аутентификации</li>
+                                <li>Оптимизация производительности</li>
+                                <li>Настройка CI/CD</li>
+                                <li>Деплой в production</li>
+                            </ul>
+                        </div>
+                        <div class="module-practice">
+                            <h4>Примеры проектов:</h4>
+                            <ul>
+                                <li>Система управления контентом</li>
+                                <li>API для социальной сети</li>
+                                <li>Сервис для обработки данных</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects fade-in delay-5">
+                <h2>Проекты курса</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>User Management API</h3>
+                        <p>REST API для управления пользователями с аутентификацией и авторизацией</p>
+                        <ul class="project-tech">
+                            <li>Node.js/Express</li>
+                            <li>MongoDB</li>
+                            <li>JWT</li>
+                            <li>Swagger</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>E-commerce Backend</h3>
+                        <p>Микросервисная архитектура для интернет-магазина</p>
+                        <ul class="project-tech">
+                            <li>Python/Django</li>
+                            <li>PostgreSQL</li>
+                            <li>Redis</li>
+                            <li>Docker</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Real-time Chat</h3>
+                        <p>Серверная часть чат-приложения с WebSocket</p>
+                        <ul class="project-tech">
+                            <li>Java/Spring</li>
+                            <li>WebSocket</li>
+                            <li>MySQL</li>
+                            <li>Kubernetes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="backend-section">
+                <div class="container">
+                    <h2>Backend Development</h2>
+                    <div class="backend-container">
+                        <div class="backend-item fade-in">
+                            <h3><i class="fas fa-server"></i> Server Architecture</h3>
+                            <p>Learn modern server architecture patterns and best practices</p>
+                            <ul>
+                                <li>RESTful API Design</li>
+                                <li>Microservices Architecture</li>
+                                <li>Service-Oriented Architecture</li>
+                                <li>Event-Driven Systems</li>
+                            </ul>
+                        </div>
+                        <div class="backend-item fade-in delay-1">
+                            <h3><i class="fas fa-database"></i> Database Management</h3>
+                            <p>Master different types of databases and data modeling</p>
+                            <ul>
+                                <li>SQL and NoSQL Databases</li>
+                                <li>Data Modeling & Optimization</li>
+                                <li>Database Security</li>
+                                <li>Query Performance</li>
+                            </ul>
+                        </div>
+                        <div class="backend-item fade-in delay-2">
+                            <h3><i class="fas fa-shield-alt"></i> Security</h3>
+                            <p>Implement robust security measures in your applications</p>
+                            <ul>
+                                <li>Authentication & Authorization</li>
+                                <li>Data Encryption</li>
+                                <li>Security Best Practices</li>
+                                <li>Vulnerability Prevention</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="requirements fade-in delay-6">
+                <h2>Требования к участникам</h2>
+                <div class="requirements-grid">
+                    <div class="requirement-card">
+                        <i class="fas fa-code"></i>
+                        <h3>Базовые знания</h3>
+                        <ul>
+                            <li>Основы программирования</li>
+                            <li>Базовый английский</li>
+                            <li>Работа с Git</li>
+                        </ul>
+                    </div>
+
+                    <div class="requirement-card">
+                        <i class="fas fa-laptop"></i>
+                        <h3>Технические требования</h3>
+                        <ul>
+                            <li>Компьютер с ОС Windows/Mac/Linux</li>
+                            <li>Стабильный интернет</li>
+                            <li>8GB RAM минимум</li>
+                        </ul>
+                    </div>
+
+                    <div class="requirement-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Временные затраты</h3>
+                        <ul>
+                            <li>15-20 часов в неделю</li>
+                            <li>3 занятия по 2 часа</li>
+                            <li>Практические задания</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="enrollment fade-in delay-7">
+                <h2>Запись на курс</h2>
+                <form class="enrollment-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">Опыт в программировании</label>
+                            <select id="experience" name="experience" required>
+                                <option value="">Выберите опыт</option>
+                                <option value="none">Нет опыта</option>
+                                <option value="beginner">Начинающий</option>
+                                <option value="intermediate">Средний</option>
+                                <option value="advanced">Продвинутый</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Дополнительная информация</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="agreement" name="agreement" required>
+                        <label for="agreement">Я согласен на обработку персональных данных</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить заявку</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 TechMentor PRO. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="backend.js"></script>
+</body>
+</html> 

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продвинутый HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0a192f;
+            color: #ccd6f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #112240;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+        }
+        .demo-section {
+            margin-bottom: 30px;
+        }
+        .demo-title {
+            color: #64ffda;
+            margin-bottom: 15px;
+        }
+        .demo-code {
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-family: monospace;
+        }
+        .demo-result {
+            background: #112240;
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px solid #64ffda;
+        }
+        .demo-controls {
+            margin-top: 15px;
+        }
+        button {
+            background: #64ffda;
+            color: #0a192f;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background: #52d1b2;
+        }
+        details {
+            margin: 10px 0;
+            padding: 10px;
+            background: #1a1a1a;
+            border-radius: 4px;
+        }
+        summary {
+            cursor: pointer;
+            color: #64ffda;
+        }
+        .dialog-demo {
+            position: relative;
+        }
+        dialog {
+            background: #1a1a1a;
+            border: 1px solid #64ffda;
+            border-radius: 4px;
+            padding: 20px;
+            color: #ccd6f6;
+        }
+        dialog::backdrop {
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .template-demo {
+            display: none;
+        }
+        .template-demo.active {
+            display: block;
+        }
+        .template-item {
+            background: #1a1a1a;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="demo-section">
+            <h2 class="demo-title">1. Details и Summary</h2>
+            <div class="demo-code">
+                <pre>&lt;details&gt;
+    &lt;summary&gt;Нажмите для раскрытия&lt;/summary&gt;
+    &lt;p&gt;Содержимое элемента details&lt;/p&gt;
+&lt;/details&gt;</pre>
+            </div>
+            <div class="demo-result">
+                <details>
+                    <summary>Нажмите для раскрытия</summary>
+                    <p>Это содержимое элемента details. Оно может содержать любой HTML-код.</p>
+                </details>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2 class="demo-title">2. Dialog</h2>
+            <div class="demo-code">
+                <pre>&lt;dialog id="myDialog"&gt;
+    &lt;h3&gt;Заголовок диалога&lt;/h3&gt;
+    &lt;p&gt;Содержимое диалога&lt;/p&gt;
+    &lt;button onclick="closeDialog()"&gt;Закрыть&lt;/button&gt;
+&lt;/dialog&gt;</pre>
+            </div>
+            <div class="demo-result dialog-demo">
+                <button onclick="showDialog()">Открыть диалог</button>
+                <dialog id="myDialog">
+                    <h3>Заголовок диалога</h3>
+                    <p>Это модальное окно, созданное с помощью элемента dialog.</p>
+                    <button onclick="closeDialog()">Закрыть</button>
+                </dialog>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2 class="demo-title">3. Template</h2>
+            <div class="demo-code">
+                <pre>&lt;template id="itemTemplate"&gt;
+    &lt;div class="template-item"&gt;
+        &lt;h4&gt;&lt;slot name="title"&gt;&lt;/slot&gt;&lt;/h4&gt;
+        &lt;p&gt;&lt;slot name="content"&gt;&lt;/slot&gt;&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/template&gt;</pre>
+            </div>
+            <div class="demo-result">
+                <button onclick="addTemplateItem()">Добавить элемент</button>
+                <div id="templateContainer"></div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2 class="demo-title">4. Picture и Source</h2>
+            <div class="demo-code">
+                <pre>&lt;picture&gt;
+    &lt;source media="(min-width: 800px)" srcset="large.jpg"&gt;
+    &lt;source media="(min-width: 400px)" srcset="medium.jpg"&gt;
+    &lt;img src="small.jpg" alt="Адаптивное изображение"&gt;
+&lt;/picture&gt;</pre>
+            </div>
+            <div class="demo-result">
+                <picture>
+                    <source media="(min-width: 800px)" srcset="https://via.placeholder.com/800x400">
+                    <source media="(min-width: 400px)" srcset="https://via.placeholder.com/400x300">
+                    <img src="https://via.placeholder.com/300x200" alt="Адаптивное изображение">
+                </picture>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2 class="demo-title">5. Data Attributes</h2>
+            <div class="demo-code">
+                <pre>&lt;div data-user-id="123" data-role="admin"&gt;
+    &lt;span data-tooltip="Это подсказка"&gt;Наведите курсор&lt;/span&gt;
+&lt;/div&gt;</pre>
+            </div>
+            <div class="demo-result">
+                <div data-user-id="123" data-role="admin">
+                    <span data-tooltip="Это подсказка">Наведите курсор</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <template id="itemTemplate">
+        <div class="template-item">
+            <h4><slot name="title"></slot></h4>
+            <p><slot name="content"></slot></p>
+        </div>
+    </template>
+
+    <script>
+        // Dialog Demo
+        const dialog = document.getElementById('myDialog');
+
+        function showDialog() {
+            dialog.showModal();
+        }
+
+        function closeDialog() {
+            dialog.close();
+        }
+
+        // Template Demo
+        function addTemplateItem() {
+            const container = document.getElementById('templateContainer');
+            const template = document.getElementById('itemTemplate');
+            const clone = template.content.cloneNode(true);
+            
+            clone.querySelector('h4').textContent = 'Новый элемент ' + (container.children.length + 1);
+            clone.querySelector('p').textContent = 'Это содержимое нового элемента.';
+            
+            container.appendChild(clone);
+        }
+
+        // Data Attributes Demo
+        document.querySelector('[data-tooltip]').addEventListener('mouseenter', function() {
+            const tooltip = this.getAttribute('data-tooltip');
+            const tooltipEl = document.createElement('div');
+            tooltipEl.textContent = tooltip;
+            tooltipEl.style.position = 'absolute';
+            tooltipEl.style.background = '#1a1a1a';
+            tooltipEl.style.padding = '5px 10px';
+            tooltipEl.style.borderRadius = '4px';
+            tooltipEl.style.marginTop = '5px';
+            this.appendChild(tooltipEl);
+
+            this.addEventListener('mouseleave', function() {
+                tooltipEl.remove();
+            });
+        });
+    </script>
+</body>
+</html> 
